@@ -1,1 +1,1 @@
-# ggsoc.github.io
+# ggsoc
