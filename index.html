@@ -289,7 +289,7 @@
             }
         });
 
-         function searchCountry() {
+        function searchCountry() {
             const input = document.getElementById("countryInput").value.trim().toLowerCase();
             const resultDiv = document.getElementById("result");
 
@@ -305,16 +305,13 @@
                 return;
             }
 
-            // Check if 'identifier' exists and provide fallback text
-            const identifier = country.identifier ? `<p class="country-info"><strong>Identifier:</strong> ${country.identifier}</p>` : '';
-
             resultDiv.innerHTML = `
                 <h3>${capitalizeWords(input)}</h3>
                 <img src="${country.flag}" alt="Flag of ${capitalizeWords(input)}" style="width: 150px;">
                 <p class="country-info"><strong>Capital:</strong> ${country.capital}</p>
                 <p class="country-info"><strong>Domain:</strong> <b>${country.domain}</b></p>
                 <p class="country-info"><strong>Continent:</strong> ${country.continent}</p>
-                ${identifier} <!-- Display identifier only if it exists -->
+                <p class="country-info"><strong>Facts:</strong> ${country.identifier}</p>
             `;
         }
 
