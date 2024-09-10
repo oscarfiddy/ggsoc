@@ -155,7 +155,7 @@
           "guatemala": { "domain": ".gt", "capital": "Guatemala City", "continent": "North America", "flag": "https://flagcdn.com/w320/gt.png" },
           "guinea": { "domain": ".gn", "capital": "Conakry", "continent": "Africa", "flag": "https://flagcdn.com/w320/gn.png" },
           "guinea-bissau": { "domain": ".gw", "capital": "Bissau", "continent": "Africa", "flag": "https://flagcdn.com/w320/gw.png" },
-          "guyana": { "domain": ".gy", "capital": "Georgetown", "continent": "South America", "flag": "https://flagcdn.com/w320/ },
+          "guyana": { "domain": ".gy", "capital": "Georgetown", "continent": "South America", "flag": "https://flagcdn.com/w320/" },
           "haiti": { "domain": ".ht", "capital": "Port-au-Prince", "continent": "North America", "flag": "https://flagcdn.com/w320/ht.png" },
           "honduras": { "domain": ".hn", "capital": "Tegucigalpa", "continent": "North America", "flag": "https://flagcdn.com/w320/hn.png" },
           "hungary": { "domain": ".hu", "capital": "Budapest", "continent": "Europe", "flag": "https://flagcdn.com/w320/hu.png", "identifier": "Holy poles, red roofs, distinct word for street (utca)" },
@@ -198,7 +198,7 @@
           "micronesia": { "domain": ".fm", "capital": "Palikir", "continent": "Oceania", "flag": "https://flagcdn.com/w320/fm.png" },
           "moldova": { "domain": ".md", "capital": "Chișinău", "continent": "Europe", "flag": "https://flagcdn.com/w320/md.png" },
           "monaco": { "domain": ".mc", "capital": "Monaco", "continent": "Europe", "flag": "https://flagcdn.com/w320/mc.png", "identifier": "Similar to France, city layout" },
-          "mongolia": { "domain": ".mn", "capital": "Ulaanbaatar", "continent": "Asia", "flag": "https://flagcdn.com/w320/mn.png", "identifier": "Diverse landscapes, Cyrillic script, boxy plates, bowling pin-like bollards" }
+          "mongolia": { "domain": ".mn", "capital": "Ulaanbaatar", "continent": "Asia", "flag": "https://flagcdn.com/w320/mn.png", "identifier": "Diverse landscapes, Cyrillic script, boxy plates, bowling pin-like bollards" },
           "montenegro": { "domain": ".me", "capital": "Podgorica", "continent": "Europe", "flag": "https://flagcdn.com/w320/me.png", "identifier": "Cyrillic script, narrow roads, mountainous" },
           "morocco": { "domain": ".ma", "capital": "Rabat", "continent": "Africa", "flag": "https://flagcdn.com/w320/ma.png" },
           "mozambique": { "domain": ".mz", "capital": "Maputo", "continent": "Africa", "flag": "https://flagcdn.com/w320/mz.png" },
@@ -237,7 +237,7 @@
           "sao tome and principe": { "domain": ".st", "capital": "São Tomé", "continent": "Africa", "flag": "https://flagcdn.com/w320/st.png" },
           "saudi arabia": { "domain": ".sa", "capital": "Riyadh", "continent": "Asia", "flag": "https://flagcdn.com/w320/sa.png" },
           "senegal": { "domain": ".sn", "capital": "Dakar", "continent": "Africa", "flag": "https://flagcdn.com/w320/sn.png", "identifier": "Long French dashes on the road, French bollards, blue plates, driving on the right" },
-          "serbia": { "domain": ".rs", "capital": "Belgrade", "continent": "Europe", "flag": "https://flagcdn.com/w320/rs.png", "identifier": "Flat guardrails, yellow signage, flat in the north, hilly in the south" }
+          "serbia": { "domain": ".rs", "capital": "Belgrade", "continent": "Europe", "flag": "https://flagcdn.com/w320/rs.png", "identifier": "Flat guardrails, yellow signage, flat in the north, hilly in the south" },
           "seychelles": { "domain": ".sc", "capital": "Victoria", "continent": "Africa", "flag": "https://flagcdn.com/w320/sc.png" },
           "sierra leone": { "domain": ".sl", "capital": "Freetown", "continent": "Africa", "flag": "https://flagcdn.com/w320/sl.png" },
           "singapore": { "domain": ".sg", "capital": "Singapore", "continent": "Asia", "flag": "https://flagcdn.com/w320/sg.png", "identifier": "Recognizable street signs, clean environment" },
@@ -271,7 +271,7 @@
           "ukraine": { "domain": ".ua", "capital": "Kyiv", "continent": "Europe", "flag": "https://flagcdn.com/w320/ua.png", "identifier": "Cyrillic with i letters, poor road quality" },
           "united arab emirates": { "domain": ".ae", "capital": "Abu Dhabi", "continent": "Asia", "flag": "https://flagcdn.com/w320/ae.png", "identifier": "Desert, skyscrapers, Arabic signage" },
           "united kingdom": { "domain": ".uk", "capital": "London", "continent": "Europe", "flag": "https://flagcdn.com/w320/gb.png", "identifier": "Yellow back plates, driving on the left" },
-          "united states of america": { "domain": ".us", "capital": "Washington, D.C.", "continent": "North America", "flag": "https://flagcdn.com/w320/us.png", "identifier": "Speed limit signs, imperial system" },
+          "united states": { "domain": ".us", "capital": "Washington, D.C.", "continent": "North America", "flag": "https://flagcdn.com/w320/us.png", "identifier": "Speed limit signs, imperial system" },
           "uruguay": { "domain": ".uy", "capital": "Montevideo", "continent": "South America", "flag": "https://flagcdn.com/w320/uy.png", "identifier": "White signposts with three dots on the back, trident poles" },
           "uzbekistan": { "domain": ".uz", "capital": "Tashkent", "continent": "Asia", "flag": "https://flagcdn.com/w320/uz.png" },
           "vanuatu": { "domain": ".vu", "capital": "Port Vila", "continent": "Oceania", "flag": "https://flagcdn.com/w320/vu.png" },
@@ -285,7 +285,7 @@
 
         document.getElementById("countryInput").addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
-                searchCountry(); // Ensure this function is called properly
+                searchCountry();
             }
         });
 
@@ -305,22 +305,23 @@
                 return;
             }
 
-            // Check if 'identifier' exists and provide fallback text
             const identifier = country.identifier ? country.identifier : 'Not available';
 
             resultDiv.innerHTML = `
-                <h3>${capitalizeWords(input)}</h3>
-                <img src="${country.flag}" alt="Flag of ${capitalizeWords(input)}" style="width: 150px;">
-                <p class="country-info"><strong>Capital:</strong> ${country.capital}</p>
-                <p class="country-info"><strong>Domain:</strong> <b>${country.domain}</b></p>
-                <p class="country-info"><strong>Continent:</strong> ${country.continent}</p>
-                <p class="country-info"><strong>Facts:</strong> ${identifier}</p>
-            `;
+            <h3>${capitalizeWords(input)}</h3>
+            <img src="${country.flag}" alt="Flag of ${capitalizeWords(input)}" style="width: 150px;">
+            <p class="country-info"><strong>Capital:</strong> ${country.capital}</p>
+            <p class="country-info"><strong>Domain:</strong> <b>${country.domain}</b></p>
+            <p class="country-info"><strong>Continent:</strong> ${country.continent}</p>
+            <p class="country-info"><strong>Facts:</strong> ${identifier}</p>
+        `;
         }
 
         function capitalizeWords(str) {
-            return str.replace(/\b\w/g, (char) => char.toUpperCase());
+            return str.replace(/\b\w/g, char => char.toUpperCase());
         }
+
+        document.querySelector("button").addEventListener("click", searchCountry);
     </script>
 </body>
 </html>
