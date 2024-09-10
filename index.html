@@ -302,6 +302,7 @@
 
             if (!country) {
                 resultDiv.innerHTML = "<p>Country not found. Please check your input and try again.</p>";
+                inputElement.value = ""; // Clear the input field
                 return;
             }
 
@@ -315,6 +316,7 @@
             <p class="country-info"><strong>Continent:</strong> ${country.continent}</p>
             <p class="country-info"><strong>Facts:</strong> ${identifier}</p>
         `;
+            inputElement.value = ""; // Clear the input field
         }
 
         function capitalizeWords(str) {
