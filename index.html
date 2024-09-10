@@ -289,7 +289,7 @@
             }
         });
 
-         function searchCountry() {
+        function searchCountry() {
             const input = document.getElementById("countryInput").value.trim().toLowerCase();
             const resultDiv = document.getElementById("result");
 
@@ -306,7 +306,7 @@
             }
 
             // Check if 'identifier' exists and provide fallback text
-            const identifier = country.identifier ? `<p class="country-info"><strong>Identifier:</strong> ${country.identifier}</p>` : '';
+            const identifier = country.identifier ? country.identifier : 'Not available';
 
             resultDiv.innerHTML = `
                 <h3>${capitalizeWords(input)}</h3>
@@ -315,6 +315,9 @@
                 <p class="country-info"><strong>Domain:</strong> <b>${country.domain}</b></p>
                 <p class="country-info"><strong>Continent:</strong> ${country.continent}</p>
                 <p class="country-info"><strong>Facts:</strong> ${identifier}</p>
+            `;
+        }
+
         function capitalizeWords(str) {
             return str.replace(/\b\w/g, (char) => char.toUpperCase());
         }
