@@ -1,1 +1,1 @@
-# ggsoc
+# GeoGuessr Soc
